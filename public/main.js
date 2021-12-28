@@ -18,7 +18,7 @@ var data = {
             borderColor: "#3B82F6",
             "fill": false,
             "type": "line",
-            borderWidth: 2,
+
 
         },
     ]
@@ -53,7 +53,6 @@ var data = {
         borderColor: "#34D399",
         "fill": false,
         lineTension: 0.1,
-        borderWidth: 2,
     }, ]
 };
 
@@ -82,9 +81,9 @@ var data = {
     datasets: [{
         label: "Likes",
         data: [65, 59, 80, 81, 56, 55, 40],
-        backgroundColor: ["#F3F4F6", "#FEE2E2", "#FEF3C7", "#D1FAE5", "#DBEAFE", "#E0E7FF", "#EDE9FE"],
-        borderColor: ["#6B7280", "#F87171", "#FBBF24", "#10B981", "#3B82F6", "#6366F1", "#8B5CF6"],
-        borderWidth: 2,
+        backgroundColor: ["#F3F4F6", "#FEE2E2", "#FEF3C7", "#D1FAE5", "#DBEAFE", "#E0E7FF", "#FBCFE8"],
+        borderColor: ["#6B7280", "#F87171", "#FBBF24", "#10B981", "#3B82F6", "#6366F1", "#DB2777"],
+        borderWidth: 1,
     }, ]
 };
 
