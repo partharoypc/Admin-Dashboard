@@ -8,11 +8,13 @@
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
 </head>
 
 <body>
     <!-- ========== Main Navbar  Start =============== -->
-    <div class="flex flex-wrap flex-row justify-between items-start py-3 px-4 sm:px-10 bg-white">
+    <div class="flex flex-wrap flex-row justify-between items-start py-3 px-4 sm:px-10 mx-auto lg:max-w-7xl bg-white">
         <div class="">
             <a class=" font-bold text-2xl" href="index.html">
                 <i class="fas fa-sun text-pink-500 pr-3"></i> Admin Day Mode
@@ -34,30 +36,30 @@
     </div>
     <!-- ========== Main Navbar  End   =============== -->
     <!-- ========== Main Manu Section  Start   =============== -->
-    <div class="hidden lg:flex flex-wrap flex-row justify-between items-center px-20 bg-white">
+    <div class="hidden lg:flex flex-wrap mx-auto flex-row justify-between items-center px-20 bg-white lg:max-w-7xl">
         <div>
             <ul class="flex flex-wrap flex-row space-x-6">
-                <li class=" border-b-2 border-pink-500 pb-3 text-pink-500 hover:text-black ">
+                <li class=" border-b-2 border-pink-500 text-pink-500 hover:text-black ">
                     <a href="">
                         <i class="fas fa-home text-pink-500 pr-3"></i>Home
                     </a>
                 </li>
-                <li class="pb-3 text-gray-600 ">
+                <li class=" text-gray-600 ">
                     <a href="">
                         <i class="fas fa-list pr-3"></i></i>Tasks
                     </a>
                 </li>
-                <li class="pb-3 text-gray-600">
+                <li class=" text-gray-600">
                     <a href="">
                         <i class="fas fa-envelope pr-3"></i>Messages
                     </a>
                 </li>
-                <li class=" pb-3 text-gray-600">
+                <li class=" text-gray-600">
                     <a href="">
                         <i class="fas fa-chart-area pr-3"></i>Analytics
                     </a>
                 </li>
-                <li class="pb-3 text-gray-600">
+                <li class="text-gray-600">
                     <a href="">
                         <i class="fas fa-wallet pr-3"></i>Payment
                     </a>
@@ -66,17 +68,16 @@
         </div>
         <div>
             <div class="relative">
-                <i class="fas fa-search absolute py-2 px-2"></i>
-                <input class=" pl-8 pb-1 rounded-md bg-gray-100 focus:outline-none focus:ring-1 focus:border-black" placeholder=" Search" type="text" name="search" id="">
+                <i class="fas fa-search absolute top-2 left-2"></i>
+                <input class=" pl-8 pb-1 rounded-md bg-gray-100 outline-none focus:ring-1 ring-gray-500" placeholder=" Search" type="text" name="search" id="">
             </div>
         </div>
 
     </div>
     <!-- ========== Main Manu Section  End   =============== -->
     <!-- ==========  Card Section  Start   =============== -->
-
-    <div class=" bg-gray-100">
-        <div class=" flex flex-row flex-wrap  justify-between pt-6 pb-12 border-b-3 border-gray-400 px-4 sm:px-0">
+    <div class=" bg-gray-100 px-4 sm:px-0">
+        <div class=" flex flex-row flex-wrap mx-auto  justify-between pt-6 pb-12 border-b-3 border-gray-400 lg:max-w-7xl">
             <div class=" w-full md:w-1/2 lg:w-1/3 p-3">
                 <div class="flex bg-white rounded-md shadow-md  justify-between items-center p-2">
                     <div class="flex-shrink bg-green-300 mr-8 rounded-md">
@@ -103,7 +104,7 @@
             </div>
 
 
-            <div class=" w-full md:w-1/2 lg:w-1/3 p-3">
+            <div class=" w-full md:w-1/3 lg:w-1/3 p-3">
                 <div class="flex bg-white rounded-md shadow-md  justify-between items-center p-2">
                     <div class=" flex-shrink  bg-yellow-600 mr-8 rounded-md">
                         <i class="fas fa-user-plus fa-2x text-white m-4"></i>
@@ -117,7 +118,7 @@
             </div>
 
 
-            <div class=" w-full md:w-1/2 lg:w-1/3 p-3">
+            <div class=" w-full md:w-1/3 lg:1/2 p-3">
                 <div class="flex bg-white rounded-md shadow-md  justify-between items-center p-2">
                     <div class=" flex-shrink bg-blue-600 mr-8 rounded-md">
                         <i class="fas fa-server fa-2x text-white m-4"></i>
@@ -131,7 +132,7 @@
             </div>
 
 
-            <div class=" w-full md:w-1/2 lg:w-1/3 p-3">
+            <div class=" w-full md:w-1/3 lg:1/2  p-3">
                 <div class="flex bg-white rounded-md shadow-md  justify-between items-center p-2">
                     <div class=" flex-shrink bg-indigo-600 mr-8 rounded-md">
                         <i class="fas fa-list-check fa-2x text-white m-4"></i>
@@ -144,7 +145,7 @@
                 </div>
             </div>
 
-            <div class=" w-full md:w-1/2 lg:w-1/3 p-3">
+            <div class=" w-full md:w-1/3 lg:1/2 p-3">
                 <div class="flex bg-white rounded-md shadow-md  justify-between items-center p-2">
                     <div class=" flex-shrink bg-red-600 mr-8 rounded-md">
                         <i class="fas fa-inbox fa-2x text-white m-4"></i>
@@ -160,9 +161,154 @@
     </div>
     <!-- ========== Card Section  End   =============== -->
 
-    <div>
+    <!-- ========== Graph Section  Start   =============== -->
 
+    <div class=" bg-gray-100 pt-12">
+        <div class="flex flex-row flex-wrap flex-grow">
+            <div class=" w-full md:w-1/2 p-3">
+                <div class=" bg-white rounded-md shadow-md">
+                    <div class=" border-b p-3">
+                        <h5 class="font-bold text-gray-600 uppercase">GRAPH</h5>
+                    </div>
+                    <div class="p-5">
+                        <canvas id="myChart-01" style="width: 75%"></canvas>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class=" w-full md:w-1/2 p-3">
+
+                <div class=" bg-white rounded-md shadow-md">
+                    <div class=" border-b p-3">
+                        <h5 class="font-bold text-gray-600 uppercase">GRAPH</h5>
+                    </div>
+                    <div class="p-5">
+                        <canvas id="myChart-02" style="width:75%"></canvas>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class=" w-full md:w-1/2 p-3">
+
+                <div class=" bg-white rounded-md shadow-md">
+                    <div class=" border-b p-3">
+                        <h5 class="font-bold text-gray-600 uppercase">GRAPH</h5>
+                    </div>
+                    <div class="p-5">
+                        <canvas id="myChart-03" style="width:75%"></canvas>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class=" w-full md:w-1/2 p-3">
+
+                <div class=" bg-white rounded-md shadow-md">
+                    <div class=" border-b p-3">
+                        <h5 class="font-bold text-gray-600 uppercase">GRAPH</h5>
+                    </div>
+                    <div class="p-5">
+                        <canvas id="myChart-04" style="width:75%"></canvas>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class=" w-full md:w-1/2 p-3">
+
+                <div class=" bg-white rounded-md shadow-md">
+                    <div class=" border-b p-3">
+                        <h5 class="font-bold text-gray-600 uppercase">Template</h5>
+                    </div>
+                    <div class="p-5">
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
     </div>
+
+    <!-- ========== Graph Section  End   =============== -->
+    <!-- ========== Card Section  Start   =============== -->
+
+    <div class=" bg-gray-100 pb-20  py-3 px-4 sm:px-10 mx-auto lg:max-w-7xl">
+        <div class="bg-white shadow-md rounded-md">
+
+
+            <div class="">
+                <div class=" border-b border-gray-500 p-3">
+                    <h5 class="font-bold text-gray-600 uppercase">Table</h5>
+                </div>
+            </div>
+            <div class="p-3">
+                <table class="w-full text-gray-600 ">
+                    <tr>
+                        <th class="text-left text-blue-900">Name</th>
+                        <th class="text-left text-blue-900">Side</th>
+                        <th class="text-left text-blue-900">Role</th>
+                    </tr>
+                    <tr>
+                        <td>Obi Wan Kenobi</td>
+                        <td> Light</td>
+                        <td>Jedi</td>
+                    </tr>
+                    <tr>
+                        <td>Greedo</td>
+                        <td>South</td>
+                        <td>Scumbag</td>
+                    </tr>
+                    <tr>
+                        <td>Darth Vader</td>
+                        <td>Dark</td>
+                        <td>Sith</td>
+                    </tr>
+                </table>
+                <div class=" py-2 text-gray-900">
+                    <a href="">See More issues...</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========== Card Section  End   =============== -->
+    <!-- ========== Footer Section  Start   =============== -->
+    <footer class="bg-white border-t border-gray-400 shadow">
+        <div class="container max-w-md mx-auto flex py-8">
+
+            <div class="w-full mx-auto flex flex-wrap">
+                <div class="flex w-full md:w-1/2 ">
+                    <div class="px-8">
+                        <h3 class="font-bold  text-gray-900">About</h3>
+                        <p class="py-4 text-gray-600 text-sm">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel mi ut felis tempus commodo nec id erat. Suspendisse consectetur dapibus velit ut lacinia.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex w-full md:w-1/2">
+                    <div class="px-8">
+                        <h3 class="font-bold  text-gray-900">Social</h3>
+                        <ul class="list-reset items-center text-sm pt-3">
+                            <li>
+                                <a class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-1" href="#">Add social link</a>
+                            </li>
+                            <li>
+                                <a class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-1" href="#">Add social link</a>
+                            </li>
+                            <li>
+                                <a class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-1" href="#">Add social link</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ========== Footer Section  End   =============== -->
+
+    <script src="main.js"></script>
 
 </body>
 
